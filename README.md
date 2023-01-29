@@ -1,25 +1,40 @@
-# api-quick-start
+# Lab: 34 - Putting it All Together
 
-Template Project for starting up CRUD API with Django Rest Framework
+---
 
-## Customization Steps
+### Project: Putting it All Together
+### Authors: Daniel Brott & Alejandro Rivera
 
-- DO NOT migrate yet
-- add additional dependencies as needed
-  - Re-export requirements.txt as needed
-- change `things` folder to the app name of your choice
-- Search through entire code base for `Thing`,`Things` and `things` to modify code to use your resource
-  - `project/settings.py`
-  - `project/urls.py`
-  - App's files
-    - `views.py`
-    - `urls.py`
-    - `admin.py`
-    - `serializers.py`
-    - `permissions.py`
-- Update ThingModel with fields you need
-  - Make sure to update other modules that would be affected by Model customizations. E.g. serializers, tests, etc.
-- Rename `project/.env.sample` to `.env` and update as needed
-- Run makemigrations and migrate commands
-- Run `collectstatic` if needed.
-- Optional: Update `api_tester.py`
+---
+
+### Setup
+
+* Install dependencies in a `venv`
+  * **run:** pip install -r requirements.txt
+* Dependencies:
+  * [requirements.txt](requirements.txt)
+* Update `.env` file with secret key
+
+
+### How to initialize / run application
+
+* Initialize server:
+  * **run:** docker-compose up --build
+
+### Links and Resources
+
+* main page:
+  * Mac: http://0.0.0.0:8000/
+  * Windows: http://localhost:8000/
+* api page:
+  * Mac: http://0.0.0.0:8000/api/v1/cookie_stands/
+  * Windows: http://localhost:8000/api/v1/cookie_stands/
+* admin page:
+  * Mac: http://0.0.0.0:8000/admin/
+  * Windows: http://localhost:8000/admin/
+    * username: admin
+    * password: admin
+
+### Tests
+
+* **run:** python3 manage.py test
