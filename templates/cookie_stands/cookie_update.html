@@ -12,27 +12,19 @@
     class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
     <form class="space-y-6" method="POST">
       {% csrf_token %}
-      <h5 class="text-xl font-medium text-gray-900 dark:text-white">Update a Thing</h5>
+      <h5 class="text-xl font-medium text-gray-900 dark:text-white">Update a Cookie Store</h5>
       <div>
-        <label for="id_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+        <label for="id_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
         <input type="text" name="name" id="id_name"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-               required value="{{ thing.name }}">
+               required value="{{ cookie.location}}">
 
       </div>
       <div>
-        <label for="id_rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+        <label for="id_rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Owner</label>
         <input type="number" name="rating" id="id_rating"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-               value="{{ thing.rating }}" min="0" max="5" required>
-      </div>
-      <div>
-        <label for="id_reviewer" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reviewer</label>
-        <select name="reviewer" id="id_reviewer">
-          {% for value, choice in form.fields.reviewer.choices %}
-            <option value="{{ value }}" {% if value == thing.reviewer.id %}selected{% endif %}>{{ choice }}</option>
-          {% endfor %}
-        </select>
+               value="{{ cookie.owner}}" min="0" max="5" required>
       </div>
 
       <div>
@@ -40,7 +32,28 @@
                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
         <textarea name="description" id="id_description"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="e.g. Celery gets a bad wrap" required>{{ thing.description }}</textarea>
+                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.description }}</textarea>
+      </div>
+            <div>
+        <label for="id_description"
+               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Average Cookies Per Sale</label>
+        <textarea name="description" id="id_description"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.average_cookies_per_sale}}</textarea>
+      </div>
+            <div>
+        <label for="id_description"
+               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Minimum Customers</label>
+        <textarea name="description" id="id_description"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.minimum_customers_per_hour }}</textarea>
+      </div>
+            <div>
+        <label for="id_description"
+               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Maximum Customers</label>
+        <textarea name="description" id="id_description"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.maximum_customers_per_hour}}</textarea>
       </div>
 
 
