@@ -14,46 +14,51 @@
       {% csrf_token %}
       <h5 class="text-xl font-medium text-gray-900 dark:text-white">Update a Cookie Store</h5>
       <div>
-        <label for="id_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
-        <input type="text" name="name" id="id_name"
+        <label for="id_location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
+        <input type="text" name="name" id="id_location"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                required value="{{ cookie.location}}">
-
       </div>
       <div>
-        <label for="id_rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Owner</label>
-        <input type="number" name="rating" id="id_rating"
+        <label for="id_owner" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Owner</label>
+        <input type="number" name="rating" id="id_owner"
                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                value="{{ cookie.owner}}" min="0" max="5" required>
       </div>
-
       <div>
         <label for="id_description"
                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
         <textarea name="description" id="id_description"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.description }}</textarea>
+                  placeholder="e.g. description" required>{{ cookie.description }}</textarea>
       </div>
-            <div>
-        <label for="id_description"
-               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Average Cookies Per Sale</label>
-        <textarea name="description" id="id_description"
+      <div>
+        <label for="id_hourly_sales"
+               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hourly Sales</label>
+        <textarea name="description" id="id_hourly_sales"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.average_cookies_per_sale}}</textarea>
+                  placeholder="e.g. hourly sales" required>{{ cookie.hourly_sales}}</textarea>
       </div>
-            <div>
-        <label for="id_description"
+      <div>
+        <label for="id_minimum_customers_per_hour"
                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Minimum Customers</label>
-        <textarea name="description" id="id_description"
+        <textarea name="description" id="id_minimum_customers_per_hour"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.minimum_customers_per_hour }}</textarea>
+                  placeholder="e.g. minimum customers per hour" required>{{ cookie.minimum_customers_per_hour }}</textarea>
       </div>
-            <div>
-        <label for="id_description"
+      <div>
+        <label for="id_maximum_customers_per_hour"
                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Maximum Customers</label>
-        <textarea name="description" id="id_description"
+        <textarea name="description" id="id_maximum_customers_per_hour"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="e.g. Celery gets a bad wrap" required>{{ cookie.maximum_customers_per_hour}}</textarea>
+                  placeholder="e.g. maximum customers per hour" required>{{ cookie.maximum_customers_per_hour}}</textarea>
+      </div>
+      <div>
+        <label for="id_average_cookies_per_sale"
+               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Average Cookies</label>
+        <textarea name="description" id="id_average_cookies_per_sale"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="e.g. average cookies per sale" required>{{ cookie.average_cookies_per_sale}}</textarea>
       </div>
 
 

@@ -18,4 +18,4 @@ class CookieStand(models.Model):
         return self.location
 
     def get_absolute_url(self):
-        return reverse('thing_detail', args=[str(self.id)])
+        return reverse('cookie_detail', args=[str(self.id)])

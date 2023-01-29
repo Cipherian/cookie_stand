@@ -30,4 +30,4 @@ class CookieStandCreateView(LoginRequiredMixin, CreateView):
 class CookieStandDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "cookie_stands/cookie_delete.html"
     model = CookieStand
-    success_url = reverse_lazy("thing_list")
+    success_url = reverse_lazy("cookie_list")
