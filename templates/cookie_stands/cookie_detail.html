@@ -3,27 +3,24 @@
 {% block content %}
 
 
-  <div class="space-y-8 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-
+<div class="flex justify-center space-y-8 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="flex flex-col text-center">
     <div class="mt-4 h-56 w-56">
-        <div class="bg-white p-2 rounded-md">
-          <div class="flex justify-between">
-            <button onclick="location.href='{% url 'cookie_delete' cookie_stand.pk %}'" class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600">DELETE</button>
-            <button onclick="location.href='{% url 'cookie_update' cookie_stand.pk %}'" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600">UPDATE</button>
-          </div>
+      <div class="bg-white p-2 rounded-md">
+        <div class="flex justify-around">
+          <button onclick="location.href='{% url 'cookie_delete' cookie_stand.pk %}'" class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600">DELETE</button>
+          <button onclick="location.href='{% url 'cookie_update' cookie_stand.pk %}'" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600">UPDATE</button>
         </div>
-
+      </div>
     </div>
-
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.location}}</p>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.owner }}</p>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.description}}</p>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.hourly_sales }}</p>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.minimum_customers_per_hour }}</p>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.maximum_customers_per_hour }}</p>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ cookie_stand.average_cookies_per_sale }}</p>
-
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Hourly Sales: {{ cookie_stand.hourly_sales }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Minimum Customers per Hour: {{ cookie_stand.minimum_customers_per_hour }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Maximum Customers per Hour: {{ cookie_stand.maximum_customers_per_hour }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Average Cookies per Sale: {{ cookie_stand.average_cookies_per_sale }}</p>
   </div>
+</div>
 
 {% endblock content %}

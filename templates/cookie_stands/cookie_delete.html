@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete Store </h1>
-  <form method="POST">
-  {% csrf_token %}
-    <p>Do you really want to delete "{{ cookie_stand.location}}"?</p>
-    <input type="submit" value="OK">
-  </form>
+<h1 class="text-center text-lg">Delete Store </h1>
+<div class="my-4 flex justify-center items-center text-center h-full">
+      <form action="" method="POST" class="w-full max-w-sm bg-white p-4 rounded-md">
+      {% csrf_token %}
+      <p class="text-sm text-red-600">Do you want to delete {{ cookie_stand.location }}?</p>
+      <input type="submit" value="DELETE" class="w-full bg-red-500 text-white rounded-md py-2">
+      </form>
+</div>
+
 {% endblock content %}
