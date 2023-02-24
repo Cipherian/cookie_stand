@@ -9,7 +9,7 @@ class CookieStand(models.Model):
         get_user_model(), on_delete=models.CASCADE, null=True, blank=True
     )
     description = models.TextField(blank=True)
-    hourly_sales = models.DecimalField(max_digits=10, decimal_places=2,)
+    hourly_sales = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     minimum_customers_per_hour = models.IntegerField(default=0)
     maximum_customers_per_hour = models.IntegerField(default=0)
     average_cookies_per_sale = models.FloatField(default=0)
